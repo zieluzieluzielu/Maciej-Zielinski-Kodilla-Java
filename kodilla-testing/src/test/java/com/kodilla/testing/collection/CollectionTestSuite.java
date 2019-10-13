@@ -44,10 +44,10 @@ public class CollectionTestSuite {
         arrayList1.add(6);
         //When
         oddNumbersExterminator.exterminate(arrayList1);
-        System.out.println("List after clearing odds: "+arrayList1);
-        Integer result = arrayList1.size();
+        ArrayList<Integer> result = oddNumbersExterminator.exterminate(arrayList1);
+        System.out.println("List after clearing odds: "+result);
         //Then
-        Assert.assertTrue(result==3);
+        Assert.assertTrue(result.size()==3);
     }
 
 }
