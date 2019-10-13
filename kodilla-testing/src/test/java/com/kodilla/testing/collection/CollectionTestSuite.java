@@ -1,11 +1,11 @@
 package com.kodilla.testing.collection;
 
 import org.junit.After;
-import com.kodilla.testing.collection.CollectionTestSuite;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.*;
+import com.kodilla.testing.collection.OddNumbersExterminator;
 
 public class CollectionTestSuite {
     @Before
