@@ -4,10 +4,10 @@ import com.kodilla.testing.calculator.Calculator;
 
 public class TestingMain {
     public static void main(String[] args) {
-
+/*
         //simpleUser tests:
-        SimpleUser simpleUser = new SimpleUser("theForumUser");
-        String result = simpleUser.getUserName();
+        SimpleUser simpleUser = new SimpleUser(String result = simpleUser.getUserName();"theForumUser");
+
 
         if (result.equals("theForumUser")){
             System.out.println("simpleUser tests are OK!");
@@ -48,6 +48,6 @@ public class TestingMain {
             System.out.println("Something is wrong with the calculator");
         }
 
-
+*/
     }
 }
