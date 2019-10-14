@@ -22,7 +22,6 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorEmptyList() {
         //Given
-
         ArrayList<Integer> arrayList1 = new ArrayList<Integer>();
         //When
         oddNumbersExterminator.exterminate(arrayList1);
