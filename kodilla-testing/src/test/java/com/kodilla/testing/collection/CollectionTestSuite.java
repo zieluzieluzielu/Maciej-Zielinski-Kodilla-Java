@@ -8,6 +8,8 @@ import java.util.*;
 import com.kodilla.testing.collection.OddNumbersExterminator;
 
 public class CollectionTestSuite {
+
+    private final OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
     @Before
     public void before(){
         System.out.println("Test Case: Begin.");
@@ -20,21 +22,19 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorEmptyList() {
         //Given
-        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
+
         ArrayList<Integer> arrayList1 = new ArrayList<Integer>();
         //When
-        arrayList1.clear();
         oddNumbersExterminator.exterminate(arrayList1);
-        System.out.println("List after clearing: "+arrayList1);
+        //System.out.println("List after clearing: "+arrayList1);
         Integer result = arrayList1.size();
         //Then
-        Assert.assertTrue(result==0);
+        Assert.assertTrue(result == 0);
     }
 
     @Test
     public void testOddNumbersExterminatorNormalList() {
         //Given
-        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         ArrayList<Integer> arrayList1 = new ArrayList<Integer>();
         arrayList1.add(1);
         arrayList1.add(2);
@@ -43,11 +43,10 @@ public class CollectionTestSuite {
         arrayList1.add(5);
         arrayList1.add(6);
         //When
-        oddNumbersExterminator.exterminate(arrayList1);
         ArrayList<Integer> result = oddNumbersExterminator.exterminate(arrayList1);
-        System.out.println("List after clearing odds: "+result);
+        //System.out.println("List after clearing odds: "+result);
         //Then
-        Assert.assertTrue(result.size()==3);
+        Assert.assertEquals(result.size(), 3);
     }
 
 }
