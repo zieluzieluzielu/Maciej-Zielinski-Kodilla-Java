@@ -2,12 +2,8 @@ package com.kodilla.testing.shape;
 import java.util.ArrayList;
 
 public class ShapeCollector {
-    private Shape shape;
-    private ArrayList<Shape> shapesList = new ArrayList<Shape>();
 
-    public ShapeCollector(Shape shape) {
-        this.shape = shape;
-    }
+    private ArrayList<Shape> shapesList = new ArrayList<Shape>();
 
     public void addFigure(Shape shape){
         shapesList.add(shape);
@@ -34,6 +30,8 @@ public class ShapeCollector {
             return theShape;
         }
     }
+
+
 
     public ArrayList<Shape> showFigures(){
         return shapesList;

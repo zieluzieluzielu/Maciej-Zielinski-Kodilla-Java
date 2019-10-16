@@ -1,6 +1,7 @@
 package com.kodilla.testing.shape;
 
 import org.junit.*;
+import com.kodilla.testing.shape.*;
 
 public class ShapeCollectorTestSuite {
     private static int testCounter = 0;
@@ -27,11 +28,11 @@ public class ShapeCollectorTestSuite {
     public void testAddFigure(){
         //Given
         Shape circle = new Circle();
-        ShapeCollector shapeCollector = new ShapeCollector(circle);
+        ShapeCollector shapeCollector = new ShapeCollector();
         //When
         shapeCollector.addFigure(circle);
         //Then
-        Assert.assertEquals(circle.getShapeName(), shapeCollector.getFigure(0));
+        Assert.assertEquals(circle.getShapeName(), shapeCollector.getFigure(0).getShapeName());
     }
 
     @Test
@@ -39,13 +40,12 @@ public class ShapeCollectorTestSuite {
     public void testRemoveFigure(){
         //Given
         Shape circle = new Circle();
-        ShapeCollector shapeCollector = new ShapeCollector(circle);
+        ShapeCollector shapeCollector = new ShapeCollector();
         shapeCollector.addFigure(circle);
         //When
         boolean result = shapeCollector.removeFigure(circle);
         //Then
         Assert.assertTrue(result);
-        Assert.assertEquals(null, shapeCollector.getFigure(0));
 
     }
     @Test
@@ -53,7 +53,7 @@ public class ShapeCollectorTestSuite {
     public void testGetFigure(){
         //Given
         Shape circle = new Circle();
-        ShapeCollector shapeCollector = new ShapeCollector(circle);
+        ShapeCollector shapeCollector = new ShapeCollector();
         shapeCollector.addFigure(circle);
         // When
         Shape retrievedFigure = shapeCollector.getFigure(0);
