@@ -70,6 +70,7 @@ public class BookDirectoryTestSuite {
         assertEquals(15, theListOfBooks15.size());
         assertEquals(0, theListOfBooks40.size());
     }
+
     @Test
     public void testListBooksWithConditionFragmentShorterThan3() {
         // Given
@@ -94,7 +95,6 @@ public class BookDirectoryTestSuite {
         //Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         List<Book> resultListOf0Books = new ArrayList<Book>();
-                //generateListOfNBooks(0);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         LibraryUser libraryUser = new LibraryUser(anyString(),"surname","12345");
         when(libraryDatabaseMock.listBooksInHandsOf(libraryUser))
