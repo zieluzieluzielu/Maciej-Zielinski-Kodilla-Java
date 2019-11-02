@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.OptionalDouble;
 
 import static java.util.stream.Collectors.toList;
 
@@ -159,13 +159,38 @@ public class BoardTestSuite {
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
                 .map(t -> t.getCreated())
-                .collect(Collectors.summingInt( n ->(Period.between( n , LocalDate.now()).getDays())));
+                .mapToInt(n -> (Period.between(n, LocalDate.now()).getDays()))
+                .sum();
         //counting average
-        double average = (summingDays/sum);
+        double average = (summingDays / sum);
 
         //Then
         Assert.assertEquals(10, average, 0.1);
 
 
     }
+
+    @Test
+    public void testAddTaskListAverageWorkingOnTask2() {
+        //Given
+        Board project = prepareTestData();
+
+        //When
+        List<TaskList> inProgressTasks = new ArrayList<>();
+        inProgressTasks.add(new TaskList("In progress"));
+
+        OptionalDouble average = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .map(t -> t.getCreated())
+                .mapToInt(n -> (Period.between(n, LocalDate.now()).getDays()))
+                .average();
+
+        //Then
+        Assert.assertEquals(10, average.getAsDouble(), 0.1);
+
+
+    }
+
+
 }
