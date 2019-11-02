@@ -12,12 +12,11 @@ public class RpsRunner {
         int computerPoints = 0;
         int userPoints = 0;
         int roundNr = 1;
-
         Scanner scan = new Scanner(System.in);
         System.out.println("What is your name?");
         String firstName = scan.nextLine();
 
-        System.out.print("Welcome " + firstName + ". Let's start a game.\n");
+        System.out.print("Welcome " + firstName + ". Let's start a Rock–paper–scissors game!\n");
 
         System.out.println("How many rounds do you want to play? (minimum: 1 , maximum: 3)");
         int rounds = scan.nextInt();
@@ -30,7 +29,6 @@ public class RpsRunner {
 
         System.out.print("You've chosen " + rounds + " rounds.\n");
         scan.nextLine();
-
 
         while (!end) {
 
