@@ -9,6 +9,7 @@ public class FirstChallenge {
         return a / b;
     }
 
+
     /**
      * This main can throw an ArithmeticException!!!
      * @param args
@@ -17,9 +18,16 @@ public class FirstChallenge {
 
         FirstChallenge firstChallenge = new FirstChallenge();
 
-        double result = firstChallenge.divide(3, 0);
-
-        System.out.println(result);
+        try {
+            double result = firstChallenge.divide(3,0);
+            System.out.println("The result is: "+result);
+        }
+        catch (ArithmeticException e) {
+            System.out.println("You can't divide by 0! Error: "+e);
+        }
+        finally {
+            System.out.println("Thank you.");
+        }
 
     }
 }
