@@ -17,8 +17,6 @@ class Game {
     private int rounds;
 
     private void welcomeScreen() {
-//       String firstName =  new User().getUserName();
-
         System.out.print("Welcome " + firstName + ". Let's start a Rock–paper–scissors game!\n");
         System.out.println("[ CONTROLS ]\n" +
                 "1 - Rock\n" +
@@ -29,45 +27,31 @@ class Game {
                 "c - controls");
     }
 
-    void roundSelector() {
+    private void roundSelector() {
         System.out.println("[ SELECT ROUNDS ]\n"
                 + "How many rounds do you want to play? (minimum: 1 , maximum: 3)");
-        rounds = -99999;
 
-        while (rounds == -99999) {
-
-            do {
-                try {
-                    rounds = scan.nextInt();
-                } catch (InputMismatchException exception) {
-                    System.out.println("Integers only, please.");
-                    System.out.println("How many rounds do you want to play? (minimum: 1 , maximum: 3)");
-                    scan.nextLine();
-                }
+        try {
+            rounds = scan.nextInt();
+            while (!(rounds <= 3 && rounds >= 1)) {
+                System.out.print("Please select the correct number of rounds (minimum: 1 , maximum: 3). You've selected " + rounds + " rounds.\n");
+                System.out.println("How many rounds do you want to play? (minimum: 1 , maximum: 3)");
+                rounds = scan.nextInt();
             }
-            while (rounds != rounds);
-
-        }
-
-        while (!(rounds <= 3 && rounds >= 1)) {
-            System.out.print("Please select the correct number of rounds (minimum: 1 , maximum: 3). You've selected " + rounds + " rounds.\n");
+        } catch (InputMismatchException exception) {
+            System.out.println("Integers only, please.");
             System.out.println("How many rounds do you want to play? (minimum: 1 , maximum: 3)");
-
-            do {
-                try {
-                    rounds = scan.nextInt();
-                } catch (InputMismatchException exception) {
-                    System.out.println("Integers only, please.");
-                    scan.nextLine();
-                }
-            }
-            while (rounds != rounds);
+            Scanner scan = new Scanner(System.in);
+            rounds = scan.nextInt();
         }
 
         System.out.print("You've chosen " + rounds + " rounds.\n");
         scan.nextLine();
 
+    }
 
+    private void currentScore(){
+        System.out.println(firstName + " vs Computer : [" + userPoints + ":" + computerPoints + "]");
     }
 
     void theGame() {
@@ -139,76 +123,73 @@ class Game {
         }
     }
 
-    void computerMoveUserScissors() {
-        String computer = computerTurn.generateComputerChoice();
-        switch (computer) {
-            case "3":
-                System.out.println("Computers choice: Scissors");
-                System.out.println(firstName + " vs Computer : [" + userPoints + ":" + computerPoints + "]");
-                roundNr++;
-                break;
-            case "2":
-                System.out.println("Computers choice: Paper");
-                userPoints++;
-                System.out.println(firstName + " vs Computer : [" + userPoints + ":" + computerPoints + "]");
-                roundNr++;
-                break;
-            case "1":
-                System.out.println("Computers choice: Rock");
-                computerPoints++;
-                System.out.println(firstName + " vs Computer : [" + userPoints + ":" + computerPoints + "]");
-                roundNr++;
-                break;
+    private void computerMoveUserScissors() {
+        String computer = computerTurn.generateComputerChoice(user);
+
+        if ("3".equals(computer)) {
+            System.out.println("Computers choice: Scissors");
+            currentScore();
+            roundNr++;
+        } else if ("2".equals(computer)) {
+            System.out.println("Computers choice: Paper");
+            userPoints++;
+            currentScore();
+            roundNr++;
+        } else if ("1".equals(computer)) {
+            System.out.println("Computers choice: Rock");
+            computerPoints++;
+            currentScore();
+            roundNr++;
         }
     }
 
-    void computerMoveUserPaper() {
-        String computer = computerTurn.generateComputerChoice();
+    private void computerMoveUserPaper() {
+        String computer = computerTurn.generateComputerChoice(user);
         switch (computer) {
             case "3":
                 System.out.println("Computers choice: Scissors");
                 computerPoints++;
-                System.out.println(firstName + " vs Computer : [" + userPoints + ":" + computerPoints + "]");
+                currentScore();
                 roundNr++;
                 break;
             case "2":
                 System.out.println("Computers choice: Paper");
-                System.out.println(firstName + " vs Computer : [" + userPoints + ":" + computerPoints + "]");
+                currentScore();
                 roundNr++;
                 break;
             case "1":
                 System.out.println("Computers choice: Rock");
                 userPoints++;
-                System.out.println(firstName + " vs Computer : [" + userPoints + ":" + computerPoints + "]");
+                currentScore();
                 roundNr++;
                 break;
         }
     }
 
-    void computerMoveUserRock() {
-        String computer = computerTurn.generateComputerChoice();
+    private void computerMoveUserRock() {
+        String computer = computerTurn.generateComputerChoice(user);
         switch (computer) {
             case "3":
                 System.out.println("Computers choice: Scissors");
                 userPoints++;
-                System.out.println(firstName + " vs Computer : [" + userPoints + ":" + computerPoints + "]");
+                currentScore();
                 roundNr++;
                 break;
             case "2":
                 System.out.println("Computers choice: Paper");
                 computerPoints++;
-                System.out.println(firstName + " vs Computer : [" + userPoints + ":" + computerPoints + "]");
+                currentScore();
                 roundNr++;
                 break;
             case "1":
                 System.out.println("Computers choice: Rock");
-                System.out.println(firstName + " vs Computer : [" + userPoints + ":" + computerPoints + "]");
+                currentScore();
                 roundNr++;
                 break;
         }
     }
 
-    void endGame() {
+    private void endGame() {
         System.out.println("[ THE END ]");
 
         if (userPoints > computerPoints) {
