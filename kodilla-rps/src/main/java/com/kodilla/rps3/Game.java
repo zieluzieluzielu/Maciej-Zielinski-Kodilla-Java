@@ -71,17 +71,17 @@ class Game {
 
                 if (userTurn.equals("1")) {
                     System.out.println(firstName + "'s choice: Rock");
-                    computerMoveUserRock();
+                    computerMoveUserRock(userTurn);
                 }
 
                 if (userTurn.equals("2")) {
                     System.out.println(firstName + "'s choice: Paper");
-                    computerMoveUserPaper();
+                    computerMoveUserPaper(userTurn);
                 }
 
                 if (userTurn.equals("3")) {
                     System.out.println(firstName + "'s choice: Scissors");
-                    computerMoveUserScissors();
+                    computerMoveUserScissors(userTurn);
                 }
 
                 if (userTurn.toLowerCase().equals("n")) {
@@ -123,28 +123,37 @@ class Game {
         }
     }
 
-    private void computerMoveUserScissors() {
-        String computer = computerTurn.generateComputerChoice(user);
+    private void computerMoveUserScissors(String userTurn) {
+        String computer = computerTurn.generateComputerChoice(userTurn);
 
-        if ("3".equals(computer)) {
-            System.out.println("Computers choice: Scissors");
-            currentScore();
-            roundNr++;
-        } else if ("2".equals(computer)) {
-            System.out.println("Computers choice: Paper");
-            userPoints++;
-            currentScore();
-            roundNr++;
-        } else if ("1".equals(computer)) {
-            System.out.println("Computers choice: Rock");
-            computerPoints++;
-            currentScore();
-            roundNr++;
+        switch (computer) {
+            case "3":
+                System.out.println("Computers choice: Scissors");
+                currentScore();
+                roundNr++;
+                break;
+            case "2":
+                System.out.println("Computers choice: Paper");
+                userPoints++;
+                currentScore();
+                roundNr++;
+                break;
+            case "1":
+                System.out.println("Computers choice: Rock");
+                computerPoints++;
+                currentScore();
+                roundNr++;
+                break;
+            case "4":
+                System.out.println("Computer choose 4");
+                roundNr++;
+                break;
         }
     }
 
-    private void computerMoveUserPaper() {
-        String computer = computerTurn.generateComputerChoice(user);
+    private void computerMoveUserPaper(String userTurn) {
+        String computer = computerTurn.generateComputerChoice(userTurn);
+
         switch (computer) {
             case "3":
                 System.out.println("Computers choice: Scissors");
@@ -163,11 +172,17 @@ class Game {
                 currentScore();
                 roundNr++;
                 break;
+            case "4":
+                System.out.println("Computer choose 4");
+                roundNr++;
+                break;
         }
     }
 
-    private void computerMoveUserRock() {
-        String computer = computerTurn.generateComputerChoice(user);
+
+    private void computerMoveUserRock(String userTurn) {
+        String computer = computerTurn.generateComputerChoice(userTurn);
+
         switch (computer) {
             case "3":
                 System.out.println("Computers choice: Scissors");
@@ -184,6 +199,10 @@ class Game {
             case "1":
                 System.out.println("Computers choice: Rock");
                 currentScore();
+                roundNr++;
+                break;
+            case "4":
+                System.out.println("Computer choose 4");
                 roundNr++;
                 break;
         }
