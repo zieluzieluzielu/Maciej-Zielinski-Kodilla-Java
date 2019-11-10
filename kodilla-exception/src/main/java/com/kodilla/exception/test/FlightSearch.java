@@ -1,27 +1,25 @@
 package com.kodilla.exception.test;
+
 import java.util.HashMap;
 
-public class FlightSearch {
-    HashMap<String, Boolean> availableAirports;
+class FlightSearch {
+    private HashMap<String, Boolean> availableAirports;
 
-    public FlightSearch(HashMap<String, Boolean> availableAirports) {
+    FlightSearch(HashMap<String, Boolean> availableAirports) {
         this.availableAirports = availableAirports;
     }
 
-    public void findFlight (Flight flight) throws RouteNotFoundException {
+    void findFlight(Flight flight) throws RouteNotFoundException {
 
-        if (availableAirports.containsKey(flight.getArrivalAirport())) {
+        if (availableAirports.containsKey(flight.getArrivalAirport()) && availableAirports.containsKey(flight.getDepartureAirport())) {
 
-            if(availableAirports.get(flight.getArrivalAirport())) {
-                System.out.println(flight.getArrivalAirport()+" Airport found: This airport is available from your departure airport.");
+            if (availableAirports.get(flight.getArrivalAirport()) && availableAirports.get(flight.getDepartureAirport())) {
+                System.out.println(flight+ ": This air connection is available.");
+            } else {
+                System.out.println(flight+ ": Airport connection not found. ");
             }
-            else {
-                System.out.println("Airport not found: Arrival airport is not available from your departure airport.");
-            }
-        }
-        else {
-            throw new RouteNotFoundException();
+        } else {
+            throw new RouteNotFoundException(flight+" : Route not found, airports are not available.");
         }
     }
-
 }
