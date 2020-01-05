@@ -20,7 +20,7 @@ public class ForumUserTestSuite {
         //When
         String userName = forumUser.getUserName();
         //Then
-        Assert.assertEquals("John Smiths",userName);
+        Assert.assertEquals("John Smith",userName);
 
     }
 }
