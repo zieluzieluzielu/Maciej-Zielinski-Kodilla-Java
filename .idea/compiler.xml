@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="com.kodilla.kodilla-course.main" target="1.8" />
+      <module name="com.kodilla.kodilla-course.test" target="1.8" />
+      <module name="kodilla-course.kodilla-exception.main" target="1.8" />
+      <module name="kodilla-course.kodilla-exception.test" target="1.8" />
+      <module name="kodilla-course.kodilla-rps.main" target="1.8" />
+      <module name="kodilla-course.kodilla-rps.test" target="1.8" />
+      <module name="kodilla-course.kodilla-spring-intro.main" target="1.8" />
+      <module name="kodilla-course.kodilla-spring-intro.test" target="1.8" />
+      <module name="kodilla-course.kodilla-spring.main" target="1.8" />
+      <module name="kodilla-course.kodilla-spring.test" target="1.8" />
+      <module name="kodilla-course.kodilla-stream.main" target="1.8" />
+      <module name="kodilla-course.kodilla-stream.test" target="1.8" />
+      <module name="kodilla-course.kodilla-testing.main" target="1.8" />
+      <module name="kodilla-course.kodilla-testing.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
