@@ -13,6 +13,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/kodilla-exception" />
+            <option value="$PROJECT_DIR$/kodilla-patterns" />
             <option value="$PROJECT_DIR$/kodilla-rps" />
             <option value="$PROJECT_DIR$/kodilla-spring" />
             <option value="$PROJECT_DIR$/kodilla-spring-intro" />
