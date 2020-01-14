@@ -10,10 +10,10 @@ public class Bigmac {
     private final List<String> ingredients;
 
     public static class BigmacBuilder {
-        private String bun;
-        private Integer burgers;
-        String sauce;
-        List<String> ingredients = new ArrayList<>();
+        private  String bun;
+        private  Integer burgers;
+        public  String sauce;
+        public  List<String> ingredients = new ArrayList<>();
 
         public BigmacBuilder bun(String bun) {
             this.bun = bun;
@@ -34,9 +34,8 @@ public class Bigmac {
             ingredients.add(ingredient);
             return this;
         }
-
-        public Bigmac build() {
-            return new Bigmac(bun, burgers, sauce, ingredients);
+        public Bigmac build(){
+            return new Bigmac(bun, burgers, sauce,ingredients);
         }
     }
 

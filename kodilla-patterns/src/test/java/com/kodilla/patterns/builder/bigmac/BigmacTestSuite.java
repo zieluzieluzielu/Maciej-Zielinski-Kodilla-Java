@@ -7,7 +7,7 @@ public class BigmacTestSuite {
 
     @Test
     public void testBigMacBuilder() {
-        //given
+    //given
         Bigmac bigmac = new Bigmac.BigmacBuilder()
                 .bun("black")
                 .ingredient("cheese")
@@ -24,9 +24,9 @@ public class BigmacTestSuite {
         int countIngredients = bigmac.getIngredients().size();
         String bunType = bigmac.getBun();
         //then
-        Assert.assertEquals(2, countBurgers);
-        Assert.assertEquals(4, countIngredients);
-        Assert.assertEquals("black", bunType);
+        Assert.assertEquals(2,countBurgers);
+        Assert.assertEquals(4,countIngredients);
+        Assert.assertEquals("black",bunType);
         Assert.assertNotNull(bigmac.getSauce());
 
     }
