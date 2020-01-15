@@ -5,11 +5,10 @@ import org.junit.Test;
 
 import java.time.LocalDate;
 import java.time.Month;
-import java.util.stream.IntStream;
 
 public class LibraryTestSuite {
     @Test
-    public void testGetBooks() {
+    public void testGetBooks() throws CloneNotSupportedException {
         //given
         Library library = new Library("Library 1");
         Book book1 = new Book("Title1", "Author1", LocalDate.of(2017, Month.MAY, 15));
@@ -20,22 +19,17 @@ public class LibraryTestSuite {
         library.getBooks().add(book3);
 
         //making a shallow copy of board object
-        Library clonedLibrary = null;
-        try {
-            clonedLibrary = library.shallowCopy();
-            clonedLibrary.setName("Library 2");
-        } catch (CloneNotSupportedException e) {
-            System.out.println(e);
-        }
+        Library clonedLibrary;
+
+        clonedLibrary = library.shallowCopy();
+        clonedLibrary.setName("Library 2");
 
         //making a deep copy of board object
-        Library deepClonedLibrary = null;
-        try {
-            deepClonedLibrary = library.deepCopy();
-            deepClonedLibrary.setName("Library 3");
-        } catch (CloneNotSupportedException e) {
-            System.out.println(e);
-        }
+        Library deepClonedLibrary;
+
+        deepClonedLibrary = library.deepCopy();
+        deepClonedLibrary.setName("Library 3");
+
 
         //when
         library.getBooks().remove(book1);
