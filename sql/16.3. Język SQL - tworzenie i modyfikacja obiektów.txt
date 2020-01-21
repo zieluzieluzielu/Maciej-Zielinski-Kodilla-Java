@@ -1,0 +1,60 @@
+-- Napisz polecenie SQL tworzące tabelę ISSUESLISTS, wraz z jej ograniczeniami i więzami integralności.
+CREATE TABLE ISSUESLISTS
+(ID SERIAL PRIMARY KEY,
+NAME VARCHAR(100)
+);
+COMMIT;
+
+-- Napisz polecenie SQL tworzące tabelę ISSUES, wraz z jej ograniczeniami i więzami integralności.
+CREATE TABLE ISSUES
+(ID SERIAL PRIMARY KEY,
+ISSUESLIST_ID BIGINT UNSIGNED NOT NULL,
+SUMMARY VARCHAR(100),
+DESCRIPTION VARCHAR(100) NOT NULL,
+USER_ID_ASSIGNEDTO BIGINT UNSIGNED NOT NULL,
+FOREIGN KEY(ISSUESLIST_ID) REFERENCES ISSUESLISTS(ID),
+FOREIGN KEY(USER_ID_ASSIGNEDTO) REFERENCES USERS(ID)
+);
+COMMIT;
+
+-- Napisz polecenia SQL dodające do tabeli ISSUESLISTS trzy listy zadań o nazwach “ToDo”, “In progress” oraz “Done”.
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ("ToDo");
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ("Done");
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ("InProgress");
+COMMIT;
+
+-- Napisz polecenia SQL dodające do tabeli ISSUES po kilka (co najmniej pięć) zadań dla każdej z list.
+INSERT INTO ISSUES (ISSUESLIST_ID,SUMMARY,DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES (1,"Summary of the issue","Description of the issue 1","1");
+INSERT INTO ISSUES (ISSUESLIST_ID,SUMMARY,DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES (1,"Summary of the issue","Description of the issue 2","2");
+INSERT INTO ISSUES (ISSUESLIST_ID,SUMMARY,DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES (1,"Summary of the issue","Description of the issue 3","4");
+INSERT INTO ISSUES (ISSUESLIST_ID,SUMMARY,DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES (1,"Summary of the issue","Description of the issue 4","1");
+INSERT INTO ISSUES (ISSUESLIST_ID,SUMMARY,DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES (1,"Summary of the issue","Description of the issue 5","1");
+INSERT INTO ISSUES (ISSUESLIST_ID,SUMMARY,DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES (2,"Summary of the issue","Description of the issue 1","1");
+INSERT INTO ISSUES (ISSUESLIST_ID,SUMMARY,DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES (2,"Summary of the issue","Description of the issue 2","2");
+INSERT INTO ISSUES (ISSUESLIST_ID,SUMMARY,DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES (2,"Summary of the issue","Description of the issue 3","4");
+INSERT INTO ISSUES (ISSUESLIST_ID,SUMMARY,DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES (2,"Summary of the issue","Description of the issue 4","1");
+INSERT INTO ISSUES (ISSUESLIST_ID,SUMMARY,DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES (2,"Summary of the issue","Description of the issue 5","1");
+INSERT INTO ISSUES (ISSUESLIST_ID,SUMMARY,DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES (3,"Summary of the issue","Description of the issue 1","1");
+INSERT INTO ISSUES (ISSUESLIST_ID,SUMMARY,DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES (3,"Summary of the issue","Description of the issue 2","2");
+INSERT INTO ISSUES (ISSUESLIST_ID,SUMMARY,DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES (3,"Summary of the issue","Description of the issue 3","4");
+INSERT INTO ISSUES (ISSUESLIST_ID,SUMMARY,DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES (3,"Summary of the issue","Description of the issue 4","1");
+INSERT INTO ISSUES (ISSUESLIST_ID,SUMMARY,DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES (3,"Summary of the issue","Description of the issue 5","1");
+COMMIT;
