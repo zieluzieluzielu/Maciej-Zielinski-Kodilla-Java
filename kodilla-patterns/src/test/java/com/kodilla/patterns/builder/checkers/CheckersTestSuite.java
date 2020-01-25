@@ -6,7 +6,7 @@ import org.junit.Test;
 public class CheckersTestSuite {
 
     @Test
-    public void testCHeckersBuilder(){
+    public void testCheckersBuilder(){
         //given
         Checkers checkers = new Checkers.CheckersBuilder()
                 .PlayerOne("John")
