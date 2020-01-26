@@ -32,11 +32,11 @@ public class InvoiceDaoTestSuite {
 
         Invoice invoice = new Invoice(INVOICE_NUMBER);
 
-        invoice.getItems().add(item);
-        invoice.getItems().add(item);
-
         item.setProduct(product);
         item2.setProduct(product2);
+
+        invoice.getItems().add(item);
+        invoice.getItems().add(item2);
 
         //When
         inoviceDao.save(invoice);
