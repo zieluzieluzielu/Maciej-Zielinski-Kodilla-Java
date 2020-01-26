@@ -2,7 +2,6 @@ package com.kodilla.hibernate.invoice;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
 import java.util.List;
 
 @Entity
@@ -41,15 +40,13 @@ public class Invoice {
     }
 
     @OneToMany(
-            targetEntity = Item.class,
-            mappedBy = "invoice",
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER
     )
-    public List<Item> getItems(){
+    @JoinColumn(name = "ID_ITEM")
+    public List<Item> getItems() {
         return items;
     }
-
 
     public void setItems(List<Item> items) {
         this.items = items;

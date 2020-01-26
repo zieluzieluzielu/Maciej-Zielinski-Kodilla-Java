@@ -34,11 +34,6 @@ public class InvoiceDaoTestSuite {
 
         invoice.getItems().add(item);
         invoice.getItems().add(item);
-        product.getItems().add(item);
-        product2.getItems().add(item2);
-
-        item.setInvoice(invoice);
-        item2.setInvoice(invoice);
 
         item.setProduct(product);
         item2.setProduct(product2);
@@ -52,7 +47,7 @@ public class InvoiceDaoTestSuite {
 
 
         //CleanUp
-        //inoviceDao.deleteById(id);
+        //inoviceDao.deleteById(id);*/
 
     }
 }

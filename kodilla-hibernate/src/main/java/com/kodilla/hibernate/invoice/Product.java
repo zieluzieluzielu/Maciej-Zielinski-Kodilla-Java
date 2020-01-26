@@ -9,7 +9,6 @@ import java.util.List;
 public class Product {
     private int in;
     private String name;
-    private List<Item> items;
 
     public Product() {
     }
@@ -39,17 +38,4 @@ public class Product {
         this.name = name;
     }
 
-    @OneToMany(
-            targetEntity = Item.class,
-            mappedBy = "product",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER
-    )
-    public List<Item> getItems(){
-        return items;
-    }
-
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
 }
