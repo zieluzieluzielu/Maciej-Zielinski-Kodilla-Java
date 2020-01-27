@@ -44,7 +44,7 @@ public class Invoice {
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER
     )
-    @JoinColumn(name = "ID_ITEM")
+    //@JoinColumn(name = "ID_ITEM")
     public List<Item> getItems() {
         return items;
     }

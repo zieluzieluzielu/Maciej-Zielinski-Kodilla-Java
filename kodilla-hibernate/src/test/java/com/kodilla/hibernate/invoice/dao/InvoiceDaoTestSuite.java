@@ -45,7 +45,6 @@ public class InvoiceDaoTestSuite {
         //Then
         Assert.assertNotEquals(0, id);
 
-
         //CleanUp
         inoviceDao.deleteById(id);
 
