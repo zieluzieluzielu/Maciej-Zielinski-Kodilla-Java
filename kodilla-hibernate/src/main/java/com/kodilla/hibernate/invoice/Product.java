@@ -11,7 +11,8 @@ import java.util.List;
                         " JOIN INVOICES_ITEMS init ON inv.INVOICE_ID=init.INVOICE_INVOICE_ID"+
                         " JOIN ITEMS it ON init.ITEMS_ITEM_ID=it.ITEM_ID"+
                         " JOIN PRODUCTS p ON p.PRODUCT_ID=it.PRODUCT_ID"+
-                        " WHERE inv.INVOICE_NUMBER = :INVOICE_NR "//,
+                        " WHERE inv.INVOICE_NUMBER = :INVOICE_NR "
+        //,
                 //resultClass = String.class
         )
 
