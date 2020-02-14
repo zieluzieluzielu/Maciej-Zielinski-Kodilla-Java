@@ -11,6 +11,9 @@ import java.util.List;
 
 @Repository
 @Transactional
-public interface InoviceDao extends CrudRepository<Invoice,Integer> {
-    List<Invoice> findByNumber(String number);
+public interface InoviceDao extends CrudRepository<Invoice, Integer> {
+
+    @Query
+    List<Invoice> retrieveInvoicesByInvoiceNr(@Param("INVOICE_NR") String invoiceNr);
+
 }

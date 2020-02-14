@@ -4,6 +4,17 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
+
+@NamedNativeQuery(
+                name = "Product.retrieveTheProductsFromInvoiceId",
+                query = "SELECT p.PRODUCT_NAME FROM INVOICES inv" +
+                        " JOIN INVOICES_ITEMS init ON inv.INVOICE_ID=init.INVOICE_INVOICE_ID"+
+                        " JOIN ITEMS it ON init.ITEMS_ITEM_ID=it.ITEM_ID"+
+                        " JOIN PRODUCTS p ON p.PRODUCT_ID=it.PRODUCT_ID"+
+                        " WHERE inv.INVOICE_NUMBER = :INVOICE_NR "//,
+                //resultClass = String.class
+        )
+
 @Entity
 @Table(name = "PRODUCTS")
 public class Product {

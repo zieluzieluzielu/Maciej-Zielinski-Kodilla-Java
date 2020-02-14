@@ -18,6 +18,8 @@ import java.util.List;
 public class InvoiceDaoTestSuite {
 
     @Autowired
+    private ProductDao productDao;
+    @Autowired
     private InoviceDao inoviceDao;
     @Autowired
     private ItemDao itemDao;
@@ -44,19 +46,23 @@ public class InvoiceDaoTestSuite {
         //When
         inoviceDao.save(invoice);
 
-        List<Invoice> invoicesList = inoviceDao.findByNumber("2020-20-20-01");
+        List<Invoice> invoicesList = inoviceDao.retrieveInvoicesByInvoiceNr(INVOICE_NUMBER);
         List<Item> itemsList = itemDao.findByValue(new BigDecimal(150));
+        List<String> productsList = productDao.retrieveTheProductsFromInvoiceId(INVOICE_NUMBER);
+
 
         //Then
-
-
         try {
             Assert.assertEquals(1, invoicesList.size());
             Assert.assertEquals(1, itemsList.size());
+            Assert.assertEquals(2, productsList.size());
+            Assert.assertEquals(true, productsList.contains(product2.getName()));
+
         } finally {
             //CleanUp
             inoviceDao.deleteAll();
             itemDao.deleteAll();
+            productDao.deleteAll();
         }
     }
 }

@@ -5,6 +5,13 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+        @NamedNativeQuery(
+                name = "Invoice.retrieveInvoicesByInvoiceNr",
+                query = "SELECT * FROM INVOICES" +
+                        " WHERE INVOICE_NUMBER = :INVOICE_NR ",
+                resultClass = Invoice.class
+        )
+
 @Entity
 @Table(name = "INVOICES")
 public class Invoice {
