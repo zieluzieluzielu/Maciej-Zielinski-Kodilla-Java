@@ -50,6 +50,8 @@ public class InvoiceDaoTestSuite {
         List<Item> itemsList = itemDao.findByValue(new BigDecimal(150));
         List<String> productsList = productDao.retrieveTheProductsFromInvoiceId(INVOICE_NUMBER);
 
+        List<Item> items = invoice.getItems();
+        String productName = items.get(0).getProduct().getName();
 
         //Then
         try {
@@ -57,6 +59,7 @@ public class InvoiceDaoTestSuite {
             Assert.assertEquals(1, itemsList.size());
             Assert.assertEquals(2, productsList.size());
             Assert.assertEquals(true, productsList.contains(product2.getName()));
+            Assert.assertEquals(productName, product.getName());
 
         } finally {
             //CleanUp
