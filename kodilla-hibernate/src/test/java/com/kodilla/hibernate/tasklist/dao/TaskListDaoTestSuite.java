@@ -38,14 +38,11 @@ public class TaskListDaoTestSuite {
         taskList.getTasks().add(task2);
         task.setTaskList(taskList);
         task2.setTaskList(taskList);
-
         //When
         taskListDao.save(taskList);
         int id = taskList.getId();
-
         //Then
         Assert.assertNotEquals(0, id);
-
         //CleanUp
         //taskListDao.deleteById(id);
     }*/
@@ -98,6 +95,7 @@ public class TaskListDaoTestSuite {
         } finally {
             //CleanUp
             taskListDao.deleteById(id);
+            taskDao.deleteAll();
         }
 
     }
@@ -108,18 +106,14 @@ public class TaskListDaoTestSuite {
         TaskList taskList = new TaskList(LISTNAME, DESCRIPTION);
         taskListDao.save(taskList);
         String taskListName = taskList.getListName();
-
         //When
         List<TaskList> listOfTasks = taskListDao.findByListName(taskListName);
         String nameOfList = "The name of list";
         int id = listOfTasks.get(0).getId();
-
         //Then
         Assert.assertEquals(nameOfList, listOfTasks.get(0).getListName());
         Assert.assertEquals(1, listOfTasks.size());
-
         //CleanUp
         taskListDao.deleteById(id);
-
     }*/
 }

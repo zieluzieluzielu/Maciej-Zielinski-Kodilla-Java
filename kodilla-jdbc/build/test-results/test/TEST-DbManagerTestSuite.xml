@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="DbManagerTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-22T15:47:14" hostname="MBP-zieluzielu" time="0.51">
+<testsuite name="DbManagerTestSuite" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-04-23T21:20:33" hostname="MBP-zieluzielu" time="0.56">
   <properties/>
-  <testcase name="testSelectUsersAndPosts" classname="DbManagerTestSuite" time="0.51"/>
-  <system-out><![CDATA[John, Smith
+  <testcase name="testSelectUsers" classname="DbManagerTestSuite" time="0.55"/>
+  <testcase name="testConnect" classname="DbManagerTestSuite" time="0.0"/>
+  <testcase name="testSelectUsersAndPosts" classname="DbManagerTestSuite" time="0.008"/>
+  <system-out><![CDATA[1, John, Smith
+2, Zachary, Lee
+3, Stephanie, Kovalsky
+4, Thomas, Landgren
+5, John, Thomson
+John, Smith
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

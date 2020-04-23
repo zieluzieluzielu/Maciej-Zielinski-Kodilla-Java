@@ -19,9 +19,10 @@ public class TaskDaoTestSuite {
 
     @Autowired
     private TaskDao taskDao;
+    private TaskFinancialDetailsDao taskFinancialDetailsDao;
     private static final String DESCRIPTION = "Test: Learn hibernate";
 
- /*   @Test
+    @Test
     public void testTaskDaoSave() {
         //Given
         Task task = new Task(DESCRIPTION, 7);
@@ -48,8 +49,9 @@ public class TaskDaoTestSuite {
 
         //When
         List<Task> readTasks = taskDao.findByDuration(duration);
-
+        System.out.println(readTasks.size());
         //Then
+
         Assert.assertEquals(1, readTasks.size());
 
 
@@ -58,23 +60,25 @@ public class TaskDaoTestSuite {
         taskDao.deleteById(id);
     }
 
-*/
-    @Test
+
+/*    @Test
     public void testTaskDaoSaveWithFinancialDetails() {
         //Given
         Task task = new Task(DESCRIPTION, 30);
-        task.setTaskFinancialDetails(new TaskFinancialDetails(new BigDecimal(120), false));
+        TaskFinancialDetails taskFinancialDetails = new TaskFinancialDetails(new BigDecimal(120), false);
+        task.setTaskFinancialDetails(taskFinancialDetails);
 
         //When
         taskDao.save(task);
         int id = task.getId();
+        int taskFinancialId = taskFinancialDetails.getId();
 
         //Then
         Assert.assertNotEquals(0, id);
 
         //CleanUp
-        //taskDao.deleteById(id);
+        taskDao.deleteById(id);
 
-    }
+    }*/
 
 }

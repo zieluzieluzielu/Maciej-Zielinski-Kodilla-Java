@@ -21,6 +21,7 @@ public class TaskFinancialDetailsDaoTestSuite {
     @Test
     public void testFindByPaid() {
         //Given
+        taskFinancialDetailsDao.deleteAll();
         TaskFinancialDetails taskFinancialDetails = new TaskFinancialDetails(new BigDecimal(115), false);
         taskFinancialDetailsDao.save(taskFinancialDetails);
         int id = taskFinancialDetails.getId();
