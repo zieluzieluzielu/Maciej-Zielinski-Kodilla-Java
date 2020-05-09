@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing.forum.ForumTestSuite" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-04-23T21:23:28" hostname="MBP-zieluzielu" time="0.011">
+<testsuite name="com.kodilla.testing.forum.ForumTestSuite" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-04-23T22:01:33" hostname="MBP-zieluzielu" time="0.002">
   <properties/>
-  <testcase name="testCaseRealname" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.005"/>
-  <testcase name="testCaseUsername" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.005"/>
+  <testcase name="testCaseRealname" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.001"/>
+  <testcase name="testCaseUsername" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.0"/>
   <system-out><![CDATA[Test Suite: Begin
 Test Case: Begin
 Testing John Smith

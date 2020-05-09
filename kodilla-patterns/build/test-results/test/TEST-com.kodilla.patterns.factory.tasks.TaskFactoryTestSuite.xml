@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.patterns.factory.tasks.TaskFactoryTestSuite" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-04-23T21:23:10" hostname="MBP-zieluzielu" time="0.01">
+<testsuite name="com.kodilla.patterns.factory.tasks.TaskFactoryTestSuite" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-04-23T22:01:21" hostname="MBP-zieluzielu" time="0.012">
   <properties/>
-  <testcase name="testFactoryDrivingTask" classname="com.kodilla.patterns.factory.tasks.TaskFactoryTestSuite" time="0.002"/>
-  <testcase name="testFactoryPaintingTask" classname="com.kodilla.patterns.factory.tasks.TaskFactoryTestSuite" time="0.002"/>
-  <testcase name="testFactoryShoppingTask" classname="com.kodilla.patterns.factory.tasks.TaskFactoryTestSuite" time="0.004"/>
+  <testcase name="testFactoryDrivingTask" classname="com.kodilla.patterns.factory.tasks.TaskFactoryTestSuite" time="0.003"/>
+  <testcase name="testFactoryPaintingTask" classname="com.kodilla.patterns.factory.tasks.TaskFactoryTestSuite" time="0.003"/>
+  <testcase name="testFactoryShoppingTask" classname="com.kodilla.patterns.factory.tasks.TaskFactoryTestSuite" time="0.005"/>
   <system-out><![CDATA[Driving task was successfully executed [ Task: Drive Abroad, Where?: Berlin, Paris, Barcelona, London, Using: Car ]
 Painting task was successfully executed [ Task: Picasso Style Painting, Color: Red, What: Autoportrait ]
 Shopping task was successfully executed [ Task: Preparing Italian Food, What to buy: Pasta, Quantity: 500.0g ]

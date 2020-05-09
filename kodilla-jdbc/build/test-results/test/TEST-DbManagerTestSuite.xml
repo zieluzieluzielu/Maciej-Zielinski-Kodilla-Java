@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="DbManagerTestSuite" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-04-23T21:20:33" hostname="MBP-zieluzielu" time="0.56">
+<testsuite name="DbManagerTestSuite" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-04-23T22:01:19" hostname="MBP-zieluzielu" time="0.525">
   <properties/>
-  <testcase name="testSelectUsers" classname="DbManagerTestSuite" time="0.55"/>
+  <testcase name="testSelectUsers" classname="DbManagerTestSuite" time="0.518"/>
   <testcase name="testConnect" classname="DbManagerTestSuite" time="0.0"/>
-  <testcase name="testSelectUsersAndPosts" classname="DbManagerTestSuite" time="0.008"/>
+  <testcase name="testSelectUsersAndPosts" classname="DbManagerTestSuite" time="0.006"/>
   <system-out><![CDATA[1, John, Smith
 2, Zachary, Lee
 3, Stephanie, Kovalsky

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.patterns.prototype.library.LibraryTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-23T21:23:10" hostname="MBP-zieluzielu" time="0.04">
+<testsuite name="com.kodilla.patterns.prototype.library.LibraryTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-23T22:01:21" hostname="MBP-zieluzielu" time="0.046">
   <properties/>
-  <testcase name="testGetBooks" classname="com.kodilla.patterns.prototype.library.LibraryTestSuite" time="0.04"/>
+  <testcase name="testGetBooks" classname="com.kodilla.patterns.prototype.library.LibraryTestSuite" time="0.046"/>
   <system-out><![CDATA[   Library books [Library 1]
-      Book{title='Title3', author='Author3', publicationDate=2020-04-23}
+      Book{title='Title3', author='Author3', publicationDate=2020-04-24}
       Book{title='Title2', author='Author2', publicationDate=2018-10-25}
    Library books [Library 2]
-      Book{title='Title3', author='Author3', publicationDate=2020-04-23}
+      Book{title='Title3', author='Author3', publicationDate=2020-04-24}
       Book{title='Title2', author='Author2', publicationDate=2018-10-25}
    Library books [Library 3]
-      Book{title='Title3', author='Author3', publicationDate=2020-04-23}
-      Book{title='Title2', author='Author2', publicationDate=2018-10-25}
       Book{title='Title1', author='Author1', publicationDate=2017-05-15}
+      Book{title='Title3', author='Author3', publicationDate=2020-04-24}
+      Book{title='Title2', author='Author2', publicationDate=2018-10-25}
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

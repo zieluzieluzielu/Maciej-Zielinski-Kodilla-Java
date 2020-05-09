@@ -20,7 +20,7 @@ public class CompanyDaoTestSuite {
     private EmployeeDao employeeDao;
 
     @Test
-    public void testFindCompaniesEmployeeQueries(){
+    public void testFindCompaniesEmployeeQueries() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
@@ -60,13 +60,11 @@ public class CompanyDaoTestSuite {
             companyDao.deleteAll();
             employeeDao.deleteAll();
         }
-
-
     }
 
 
     @Test
-    public void testSaveManyToMany(){
+    public void testSaveManyToMany() {
 
         //Given
         Employee johnSmith = new Employee("John", "Smith");
