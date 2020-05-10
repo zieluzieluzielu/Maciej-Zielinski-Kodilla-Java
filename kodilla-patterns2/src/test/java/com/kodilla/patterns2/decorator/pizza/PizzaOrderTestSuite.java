@@ -42,7 +42,7 @@ public class PizzaOrderTestSuite {
         String description = theOrder.getDescription();
 
         //Then
-        assertEquals("Pizza order: mozarella, additional cheese, onion, meat, sauce (size: LARGE)",description);
+        assertEquals("Pizza order: mozarella, tomato sauce, additional cheese, onion, meat, sauce (size: LARGE)",description);
 
     }
 }
