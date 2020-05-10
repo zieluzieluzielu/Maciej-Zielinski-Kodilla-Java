@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.patterns.singleton.LoggerTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-23T22:01:21" hostname="MBP-zieluzielu" time="0.0">
-  <properties/>
-  <testcase name="getLastLogin" classname="com.kodilla.patterns.singleton.LoggerTestSuite" time="0.0"/>
-  <system-out><![CDATA[Log: [10.10.2019]
-Last login: 10.10.2019
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
