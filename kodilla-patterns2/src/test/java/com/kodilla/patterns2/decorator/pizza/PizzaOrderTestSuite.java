@@ -61,7 +61,6 @@ public class PizzaOrderTestSuite {
         //Then
 
         assertEquals(new BigDecimal(10).setScale(2),theCost.setScale(2));
-        //assertTrue(theCost.compareTo(new BigDecimal(10.0)) == 0);
     }
 
     @Test
