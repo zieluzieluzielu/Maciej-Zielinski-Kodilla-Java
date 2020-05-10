@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class PizzaOrderTestSuite {
 
     @Test
-    public void testPizzaOrderWithCheeseGetCost(){
+    public void testPizzaOrderWithCheeseOnionMeatSauceLargeGetCost(){
         //Given
         PizzaOrder theOrder = new BasicPizzaOrder();
         theOrder = new CheeseIngredientDecorator(theOrder);
@@ -28,7 +28,7 @@ public class PizzaOrderTestSuite {
     }
 
     @Test
-    public void testPizzaOrderWithCheeseGetDescription(){
+    public void testPizzaOrderWithCheeseOnionMeatSauceLargeGetDescription(){
         //Given
         PizzaOrder theOrder = new BasicPizzaOrder();
         theOrder = new CheeseIngredientDecorator(theOrder);
@@ -43,6 +43,38 @@ public class PizzaOrderTestSuite {
 
         //Then
         assertEquals("Pizza order: mozarella, tomato sauce, additional cheese, onion, meat, sauce (size: LARGE)",description);
+
+    }
+
+    @Test
+    public void testPizzaOrderWithMeatSmallGetCost(){
+        //Given
+        PizzaOrder theOrder = new BasicPizzaOrder();
+        theOrder = new MeatIngredientDecorator(theOrder);
+        theOrder = new SmallPizzaDecorator(theOrder);
+        //Order matters (size always at the end)
+
+        //When
+        BigDecimal theCost = theOrder.getCost();
+
+        //Then
+        assertEquals(new BigDecimal(9.5),theCost);
+
+    }
+
+    @Test
+    public void testPizzaOrderWithMeatSmallGetDescription(){
+        //Given
+        PizzaOrder theOrder = new BasicPizzaOrder();
+        theOrder = new MeatIngredientDecorator(theOrder);
+        theOrder = new SmallPizzaDecorator(theOrder);
+        //Order matters (size always at the end)
+
+        //When
+        String description = theOrder.getDescription();
+
+        //Then
+        assertEquals("Pizza order: mozarella, tomato sauce, meat (size: SMALL)",description);
 
     }
 }
