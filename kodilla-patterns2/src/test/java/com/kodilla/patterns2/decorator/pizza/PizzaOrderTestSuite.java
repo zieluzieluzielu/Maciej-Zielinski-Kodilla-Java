@@ -1,10 +1,10 @@
 package com.kodilla.patterns2.decorator.pizza;
 
 import org.junit.Test;
-
 import java.math.BigDecimal;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class PizzaOrderTestSuite {
 
@@ -47,10 +47,11 @@ public class PizzaOrderTestSuite {
     }
 
     @Test
-    public void testPizzaOrderWithMeatSmallGetCost(){
+    public void testPizzaOrderWithOnionSmallGetCost(){
         //Given
         PizzaOrder theOrder = new BasicPizzaOrder();
         theOrder = new MeatIngredientDecorator(theOrder);
+        theOrder = new OnionIngredientDecorator(theOrder);
         theOrder = new SmallPizzaDecorator(theOrder);
         //Order matters (size always at the end)
 
@@ -58,8 +59,7 @@ public class PizzaOrderTestSuite {
         BigDecimal theCost = theOrder.getCost();
 
         //Then
-        assertEquals(new BigDecimal(9.5),theCost);
-
+        assertTrue(theCost.compareTo(new BigDecimal(10.0)) == 0);
     }
 
     @Test
