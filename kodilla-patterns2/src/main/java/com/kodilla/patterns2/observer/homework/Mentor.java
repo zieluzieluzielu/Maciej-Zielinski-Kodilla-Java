@@ -10,15 +10,10 @@ public class Mentor implements Observer {
     }
 
     @Override
-    public void update(Task task, Student student) throws NullPointerException {
-        try {
+    public void update(Task task, Student student) {
             updateCount++;
             System.out.println("Mentor: " + mentorName + " - New tasks in " + task.getName() + ", author: " + student.getName() + "\n"
                     + "[total: " + getUpdateCount() + (getUpdateCount() == 1 ? " task" : " tasks") + " to check by this mentor; " + task.getTasks().size() + (task.getTasks().size() == 1 ? " task" : " tasks") + " within this module] ");
-
-        } catch (NullPointerException e) {
-            //
-        }
 
     }
 
