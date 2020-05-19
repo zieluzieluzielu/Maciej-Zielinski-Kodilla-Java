@@ -24,9 +24,8 @@ public final class SearchFacade {
     private static final Logger LOGGER = LoggerFactory.getLogger(SearchFacade.class);
 
 
-    public void searchCompany(String companyName) throws SearchFacadeException {
+    public List<Company> searchCompany(String companyName) throws SearchFacadeException {
         LOGGER.info("Search for company with name like : " + companyName);
-        //companyDao.retrieveCompaniesNameLike(companyName);
         List<Company> companies = companyDao.retrieveCompaniesNameLike(companyName);
         int resultsSize = companies.size();
 
@@ -37,10 +36,11 @@ public final class SearchFacade {
             String companiesList = companies.stream().map(o -> o.getName()).collect(Collectors.joining(", "));
             LOGGER.info(resultsSize + (resultsSize == 1 ? " company" : " companies") + " found: " + companiesList);
         }
+        return companies;
 
     }
 
-    public void searchEmployee(String employeeName) throws SearchFacadeException {
+    public List<Employee> searchEmployee(String employeeName) throws SearchFacadeException {
         LOGGER.info("Search for employee with name like : " + employeeName);
         //employeeDao.retrieveEmployeeNameLike(employeeName);
         List<Employee> employees = employeeDao.retrieveEmployeeNameLike(employeeName);
@@ -53,6 +53,8 @@ public final class SearchFacade {
             String employeesList = employees.stream().map(o -> o.getLastname()).collect(Collectors.joining(", "));
             LOGGER.info(resultsSize + (resultsSize == 1 ? " employee" : " employees") + " found: " + employeesList);
         }
+
+        return employees;
     }
 
 
