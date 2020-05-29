@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.patterns.builder.checkers.CheckersTestSuite" tests="1" skipped="1" failures="0" errors="0" timestamp="2020-05-25T18:14:49" hostname="MBP-zieluzielu" time="46428.836">
+  <properties/>
+  <testcase name="testCheckersBuilder" classname="com.kodilla.patterns.builder.checkers.CheckersTestSuite" time="46428.836">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
