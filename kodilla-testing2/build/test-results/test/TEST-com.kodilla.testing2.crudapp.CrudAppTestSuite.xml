@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing2.crudapp.CrudAppTestSuite" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-05-29T21:37:43" hostname="MBP-zieluzielu" time="37.661">
+<testsuite name="com.kodilla.testing2.crudapp.CrudAppTestSuite" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-05-30T12:15:20" hostname="MBP-zieluzielu" time="47.291">
   <properties/>
-  <testcase name="shouldCreateTrelloCard" classname="com.kodilla.testing2.crudapp.CrudAppTestSuite" time="37.661">
+  <testcase name="shouldCreateTrelloCard" classname="com.kodilla.testing2.crudapp.CrudAppTestSuite" time="47.291">
     <failure message="java.lang.AssertionError" type="java.lang.AssertionError">java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
 	at org.junit.Assert.assertTrue(Assert.java:52)
-	at com.kodilla.testing2.crudapp.CrudAppTestSuite.shouldCreateTrelloCard(CrudAppTestSuite.java:112)
+	at com.kodilla.testing2.crudapp.CrudAppTestSuite.shouldCreateTrelloCard(CrudAppTestSuite.java:136)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -59,17 +59,17 @@
 </failure>
   </testcase>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 83.0.4103.39 (ccbf011cb2d2b19b506d844400483861342c20cd-refs/branch-heads/4103@{#416}) on port 49116
+  <system-err><![CDATA[Starting ChromeDriver 83.0.4103.39 (ccbf011cb2d2b19b506d844400483861342c20cd-refs/branch-heads/4103@{#416}) on port 11084
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-maj 29, 2020 11:37:46 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+maj 30, 2020 2:15:23 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-Starting ChromeDriver 83.0.4103.39 (ccbf011cb2d2b19b506d844400483861342c20cd-refs/branch-heads/4103@{#416}) on port 2990
+Starting ChromeDriver 83.0.4103.39 (ccbf011cb2d2b19b506d844400483861342c20cd-refs/branch-heads/4103@{#416}) on port 17626
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-maj 29, 2020 11:37:58 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+maj 30, 2020 2:15:44 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 ]]></system-err>
 </testsuite>
